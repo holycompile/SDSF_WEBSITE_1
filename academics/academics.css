@@ -7,7 +7,7 @@
   font-family: "Poppins", sans-serif;
 } */
 
-/* ===== Navbar ===== */
+/* ===== Navbar ===== 
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -80,7 +80,7 @@
     padding: 0.5rem 0.8rem;
     border-radius: 6px;
     border: 1px solid #ccc;
-}
+} */
 
 
 /* ===== HERO SECTION ===== */

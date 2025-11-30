@@ -1,13 +1,14 @@
+<!--Code edited by Alivia Hossain, SDSF AI/DS Sem 1-->
 <div class="header-wrapper">
 
     <div class="top-bar"></div>
 
     <header class="navbar">
         <div class="navbar-left">
-            <img src="/photoes/davv_logo_alivia.png" class="university-logo">
+            <img src="/photoes/sdsf_logo.jpg" class="dept-logo">
             <div class="title">
-                <h1>DAVV</h1>
-                <p>Devi Ahilya Vishwavidyalaya</p>
+                <h1>SDSF</h1>
+                <!--<p>Devi Ahilya Vishwavidyalaya</p>-->
             </div>
         </div>
 
@@ -18,14 +19,27 @@
             <a href="/academics/academics.html">Academics</a>
             <a href="/admission/admission.html">Admission</a>
             <a href="/faculty/faculty.html">Faculty</a>
+            <a href="/iqac/iqac.html">IQAC</a>
         </nav>
 
-        <div class="navbar-right">
-            <img src="/photoes/sdsf_logo.jpg" class="dept-logo">
-            <div class="title">
-                <h1>SDSF</h1>
-                <p>School of Data Science and Forecasting</p>
+            
+            <div class="hamburger-menu-container">
+                <input type="checkbox" id="menu-toggle">
+                <label for="menu-toggle" class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <ul class="hamburger-menu">
+                    <li><a href="#teachers-dashboard">Teachers Dashboard</a></li>
+                    <li><a href="/student-dashboard.html">Student Dashboard</a>
+                    <li><a href="#social-media">Social Media</a></li>
+                    <li><a href="#photo-gallery">Photo Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" onclick="openContributorModal(event)">Contributors</a></li>
+                </ul>
             </div>
+
         </div>
 
     </header>
