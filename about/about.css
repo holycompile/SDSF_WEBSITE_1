@@ -1,59 +1,123 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+
 /* ===== HERO BANNER ===== */
-.hero-banner {
-  position: relative;
-  height: 65vh;
-  background: url("/photoes/about_ai.png") center/cover no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0;
+
+
+
+.about-hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45); /* subtle dark overlay */
+.about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
 }
 
-.hero-text {
-  position: relative;
-  text-align: center;
-  color: white;
+.about-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 20, 40, 0.7);
+    z-index: 2;
 }
 
-.hero-text h1 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;          /* SUPER BOLD */
-  font-size: 4rem;           /* BIG SIZE */
-  letter-spacing: -1px;      /* THIS makes it look like the screenshot */
-  margin: 0;
+.hero-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.hero-text p {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 1.3rem;
-  margin-top: 0.6rem;
-  opacity: 0.9;
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: none;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .hero-banner {
-    height: 45vh;
-  }
+.about-hero h2 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1rem;
+    color: #fff  !important;
 
-  .hero-text h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
+    
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.3s;
 }
+
+
+.about-hero h3,
+.about-hero .hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #ffeb3b;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.6s;
+}
+
+.about-hero p,
+.about-hero .hero-intro-text {
+    color: #f0f3ff;
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+
+    opacity: 0;
+    animation: fadeInText 1s ease forwards 0.9s;
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
 
 /* ===== EXPLORE SECTION BACKGROUND ===== */
 .explore-section {
