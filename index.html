@@ -64,7 +64,18 @@
   </div>
 
   <div class="slide fade">
-    <img src="photoes/indexhero1.jpg" alt="Slide 4">
+    <img src="photoes/indexhero1.JPG" alt="Slide 4">
+    <div class="hero-text">
+      <p class="tagline">Learning Beyond Limits</p>
+       <h1 class="code-colored">
+            <span class="c1">Empopwering</span><br>
+            <span class="c2">Innovators of</span><br>
+            <span class="c3">the Future</span>
+          </h1>
+    </div>
+  </div>
+  <div class="slide fade">
+    <img src="photoes/indexhero4.jpg" alt="Slide 4">
     <div class="hero-text">
       <p class="tagline">Learning Beyond Limits</p>
        <h1 class="code-colored">
@@ -76,8 +87,8 @@
   </div>
 
     <!-- Arrow Buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <a class="prev" onclick="plusSlides(0)">&#10094;</a>
+  <a class="next" onclick="plusSlides(0)">&#10095;</a>
 
   <!-- Dots for manual control -->
   <div class="dots">
@@ -85,6 +96,7 @@
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
     <span class="dot" onclick="currentSlide(4)"></span>
+    <span class="dot" onclick="currentSlide(5)"></span>
   </div>
 </section>
 
@@ -109,7 +121,7 @@
 
       slides[slideIndex - 1].style.display = "block";
       dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 5000);
+      setTimeout(showSlides, 10000);
     }
 
     function currentSlide(n) {
