@@ -430,8 +430,8 @@ section {
 .info-table-container td {
     border: 1px solid #e0e0e0;
     padding: 1rem 1.2rem;
-    text-align: left;
-    vertical-align: top;
+    text-align: center;
+    vertical-align: center;
 }
 
 .info-table-container th {

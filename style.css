@@ -95,7 +95,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 3rem;
+    gap: 5rem;
     margin-left: -5rem; 	
     margin-right: auto;
     margin-top: 2rem;
