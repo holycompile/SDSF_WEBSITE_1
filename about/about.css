@@ -6,7 +6,18 @@ html {
 body {
     font-family: 'Poppins', sans-serif;
 }
-
+.about_sdsf{
+    text-align:justify;
+}
+.about_introduction{
+    text-align:justify;
+}
+.about_Vision{
+    text-align:justify;
+}
+.about_head{
+    text-align:justify;
+}
 /* --- About Hero Section ---
 */
 .about-hero {
