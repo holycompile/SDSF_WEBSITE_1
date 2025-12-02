@@ -5,10 +5,12 @@
 
     <header class="navbar">
         <div class="navbar-left">
-            <img src="/photoes/sdsf_logo.jpg" class="dept-logo">
+            <img src="/photoes/davv_logo.png" class="dept-logo">
             <div class="title">
                 <h1>SDSF</h1>
-                <!--<p>Devi Ahilya Vishwavidyalaya</p>-->
+                <p> School Of Data Science
+                    & Forecasting
+                </p>
             </div>
         </div>
 
@@ -18,7 +20,64 @@
             <a href="/research/research_page.html">Research</a>
             <a href="/academics/academics.html">Academics</a>
             <a href="/admission/admission.html">Admission</a>
-            <a href="/events/events.html">Scholarships and Placement</a>
+           
+            <!--This is the Scholarship part-->
+            <li class="scholarship-item">
+                <a href="#" class="scholarship-toggle">Scholarships</a>
+
+                <ul class="scholarship-menu">
+                    <li><a href="https://gate2026.iitg.ac.in/">GATE Scholarships</a></li>
+                    <li><a href="https://www.medhavikalyan.mp.gov.in/MMVY.aspx">Mukhyamantri Medhavi Vidhyarthi Yojana</a></li>
+                    <li><a href="https://tribal.mp.gov.in/MPTAAS">MPTAASC</a></li>
+                </ul>
+            </li>
+
+
+
+            <!--This is the placement part -->
+           <li class="training-item">
+                                    <a href="#" class="training-toggle">Placement</a>
+
+                                    <ul class="training-menu">
+                                        
+                                        <li class="ts-wrapper">
+                                                        <a href="#" class="ts-btn">Teaching Schedules</a>
+
+                                                                    <!-- Hidden inner content -->
+                                                                    <div class="ts-content">
+                                                                        <ol class="program-list">
+                                                                            <li>M.Tech. (Data Science)</li>
+                                                                            <li>M.Tech. (Big Data Analytics)</li>
+                                                                            <li>M.Tech. (Executive in Data Science)</li>
+                                                                            <li>M.Tech. (Integrated AI & DS)</li>
+
+                                                                            <li>M.B.A. (Business Analytics)
+                                                                                <ul class="semester-links">
+                                                                                    <li><a href="https://dsf.dauniv.ac.in/notices/Teaching-Schedule-M.B.A.(BA)-I.pdf">First Semester (2024–26)</a></li>
+                                                                                    <li><a href="https://dsf.dauniv.ac.in/notices/Teaching-Schedule-M.B.A.(BA)-III-Sem..pdf">Third Semester (2023–25)</a></li>
+                                                                                </ul>
+                                                                            </li>
+
+                                                                            <li>M.Sc. (Data Science & Analytics)
+                                                                                <ul class="semester-links">
+                                                                                    <li><a href="https://dsf.dauniv.ac.in/notices/Teaching-Schedule-M.Sc.(DSA)-I-Sem..pdf">First Semester (2024–26)</a></li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ol>
+                                                                    </div>
+                                            </li>
+
+
+
+                                        <li><a href="#">Short-Term Training</a></li>
+                                        <li><a href="https://dsf.dauniv.ac.in/notices/Internship.pdf">Internship</a></li>
+                                        <li><a href="https://dsf.dauniv.ac.in/notices/GuidelinesforProjects.pdf">Guidelines for Projects</a></li>
+                                        <li><a href="https://dsf.dauniv.ac.in/notices/Placement.pdf">Placement</a></li>
+                                        <li><a href="https://dsf.dauniv.ac.in/notices/TrainingandPlacement2020.pdf">Training and Placement Cell</a></li>
+                                    </ul>
+            </li>
+
+                  
             <a href="/events/events.html">Events</a>
         </nav>
 
@@ -31,17 +90,36 @@
                     <span></span>
                 </label>
                 <ul class="hamburger-menu">
-                    <li><a href="#teachers-dashboard">Teachers Dashboard</a></li>
-                    <li><a href="/student-dashboard.html">Student Dashboard</a>
-                    <li><a href="#social-media">Social Media</a></li>
-                    <li><a href="#photo-gallery">Photo Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" onclick="openContributorModal(event)">Contributors</a></li>
+                    <li><a href="#">Teachers Dashboard</a></li>
+                    <li><a href="#">Student Dashboard</a>
+                    <!-- Contributors section already inside about <li><a href="#" onclick="openContributorModal(event)">Contributors</a></li>-->
                 </ul>
+                
             </div>
+            
 
         </div>
+       
 
     </header>
+
+    <!--Script code for placement so that it opens in everysubpage-->
+    <script>
+        document.addEventListener("click", (e) => {
+            const btn = e.target.closest(".ts-btn");
+            if (!btn) return;  // not clicking TS button → ignore
+
+            e.preventDefault();
+
+            const wrapper = btn.closest(".ts-wrapper");
+            wrapper.classList.toggle("open");
+
+            // Close any other opened ones
+            document.querySelectorAll(".ts-wrapper").forEach(w => {
+                if (w !== wrapper) w.classList.remove("open");
+            });
+        });
+    </script>
+
 
 </div>

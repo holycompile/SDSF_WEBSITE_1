@@ -23,7 +23,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 3rem;
+    padding: 1rem 0rem;
     background: #ffffff;
     border-bottom: 3px solid #4a68ff;
     transition: box-shadow 0.3s ease;
@@ -32,7 +32,8 @@ body {
 .navbar-left {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.1rem;
+    min-width: 250px;
 }
 
 /* Adjusted for better spacing control */
@@ -74,8 +75,8 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 5rem;
-    margin-left: 8rem; 	
+    gap: 4rem;
+    margin-left: 2rem; 	
     margin-right: auto;
 }
 
@@ -95,6 +96,225 @@ body {
     border-radius: 6px;
     border: 1px solid #ccc;
 }
+/* === code for the scholarship dropdown menu */
+.scholarship-item {
+  position: relative;
+  z-index: 9999;
+}
+
+.scholarship-toggle {
+  padding: 0.999px 15px;  /*  */
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.scholarship-toggle::after {
+  font-size: 0.75rem;
+}
+
+.scholarship-menu {
+  position: absolute;
+  z-index: 99999;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  list-style: none;
+  display: none;
+  min-width: 220px;
+  z-index: 200;
+}
+
+.scholarship-menu li a {
+  display: block;
+  padding: 8px 0;
+  color: #2d3748;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.scholarship-menu li a:hover {
+  color: #4c51bf;
+}
+
+.scholarship-item:hover .scholarship-menu {
+  display: block;
+}
+
+
+/*code for the Placement stuff */
+
+
+/* Inner Teaching Schedules Panel */
+.ts-content {
+  display: none;
+  background: #f7f8fc;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-top: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+
+  /* smooth animation */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+}
+
+/* When opened */
+.ts-wrapper.open .ts-content {
+  display: block;
+  max-height: 600px;   /* enough for content */
+  padding: 18px 20px;
+}
+
+/* Program list styling */
+.program-list {
+  padding-left: 0.5rem;
+  margin: 0;
+}
+
+.program-list > li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Remove border on last */
+.program-list > li:last-child {
+  border-bottom: none;
+}
+
+/* Semester links */
+.semester-links {
+  margin-top: 6px;
+  padding-left: 20px;
+}
+
+.semester-links li a {
+  color: #4f46e5;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.semester-links li a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* WRAPPER */
+.training-item {
+  position: relative;
+  z-index: 9999;
+}
+
+/* MAIN LINK */
+.training-toggle {
+  padding: 1px 15px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* DROPDOWN BOX */
+.training-menu {
+  position: absolute;
+  top: 100%;
+  left: -50px;
+  transform: translateX(-20px);
+  background: white;
+  padding: 15px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  list-style: none;
+  display: none;
+  min-width: 250px;
+  z-index: 99999;
+}
+
+.training-menu li a {
+  display: block;
+  padding: 8px 0;
+  text-decoration: none;
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.training-menu li a:hover {
+  color: #4c51bf;
+}
+
+/* default hover behavior */
+.training-item:hover .training-menu {
+  display: block;
+}
+
+/* FIX: dropdown must NOT close when hovering inside */
+.training-item:hover .training-menu,
+.training-menu:hover {
+  display: block !important;
+}
+
+/* TRAINING SCHEDULES CONTENT */
+.training-schedules-section {
+  display:none;
+  margin-top: 20px;
+  transition: opacity 0.4s ease;
+}
+
+/* your text styles */
+.training-schedules-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #1a1a2e;
+}
+
+.program-list {
+  margin-left: 1rem;
+  padding: 0;
+}
+
+.program-list li {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+  color: #333;
+  white-space: nowrap;
+}
+
+.semester-links {
+  padding-left: 1.2rem;
+  margin-top: 0.3rem;
+}
+
+.semester-links li {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.semester-links a {
+  color: #1e3a8a;
+  text-decoration: none;
+}
+
+.semester-links a:hover {
+  text-decoration: underline;
+}
+
+
+
+
 
 /* ===== HAMBURGER MENU STYLES ===== */
 .hamburger-menu-container {
@@ -190,11 +410,6 @@ body {
 
 /* ===== CONTRIBUTOR POPUP MODAL STYLES (UPDATED) ===== */
 
-/* Modal Backdrop */
-/* ===== CONTRIBUTOR POPUP MODAL STYLES (UPDATED) ===== */
-
-/* Modal Backdrop */
-/* ===== CONTRIBUTOR POPUP MODAL STYLES (UPDATED) ===== */
 
 /* Modal Backdrop */
 .modal {

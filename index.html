@@ -145,9 +145,9 @@
 
                       <div class="notice-item">
                           <span class="bullet"></span>
-                          <p>
-                              Admission Open in M-Tech (Big Data Analytics) / M-Tech (Data Science) for Working Executives & M.Sc (Data Science & Analysis), MBA (Business Analytics) Against Vacant Seats
-                          </p>
+                          <ul>
+                             <li><a href="https://www.dauniv.ac.in/public/adminassets/pdf/09-08-2025_0408pm86639.pdf">Admission Open in M-Tech (Big Data Analytics) / M-Tech (Data Science) for Working Executives & M.Sc (Data Science & Analysis), MBA (Business Analytics) Against Vacant Seats</a></li>
+                          </ul>
                       </div>
 
                       <div class="notice-item dropdown">
@@ -208,20 +208,16 @@
                             <p>School Of Data Science and Forecasting</p>
                             <p>IET-DAVV Campus</p>
                             <p>Khandwa Road, Indore</p>
-                            <p>Madhya Pradesh – PIN: 452020</p>
-                            <p>Phone: +91 0000000000</p>
-                            <p>Email: info@sdsf.ac.in</p>
+                            <p>Madhya Pradesh – PIN: 452001</p>
+                            <p></p>
+                            <p></p>
                         </div>
 
                         <!-- Column 2 -->
-                       <div class="social-section">
-                        <h2>SOCIAL MEDIA</h2>
+                       <div class="social-section" id="social-media">
+                        <h3>SOCIAL MEDIA</h3>
                         <div class="social-links">
-                            <a href="https://facebook.com/your-page" target="_blank" class="social-link facebook">
-                                <i class="fab fa-facebook-f"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <br>
+                            
                             <a href="https://www.instagram.com/davv_sdsf/" target="_blank" class="social-link instagram">
                                 <i class="fab fa-instagram"></i>
                                 <span>Instagram</span>
@@ -236,27 +232,38 @@
                                 <i class="fab fa-youtube"></i>
                                 <span>YouTube</span>
                             </a>
+                            <br>
+                            <a href="https://facebook.com/your-channel" target="_blank" class="social-link youtube">
+                                <i class="fab fa-facebook"></i>
+                                <span>Facebook</span>
+                            </a>
                         </div>
                     </div>
 
                         <!-- Column 3 -->
                         <div class="footer-col">
                             <h3>QUICK LINKS</h3>
-                            <a href="#">Careers</a><br>
+                            <a href="admission/admission.html">Careers</a><br>
                             <a href="#">Anti-Ragging Committee</a><br>
                             <a href="#">Grievance Cell</a><br>
                             <a href="#">Committees</a><br>
-                            <a href="#">Ordinance</a><br>
-                            <a href="#">Statutes</a>
+                            <a href="academics/academics.html">Ordinance</a><br>
                         </div>
 
                         <!-- Column 4 -->
                         <div class="footer-col">
                             <h3>PARENTS</h3>
-                            <a href="#">How to Reach</a><br>
-                            <a href="#">Hotels Nearby</a><br>
-                            <a href="#">Parents Login</a><br>
-                            <a href="#">Contact Us</a>
+                            <a href="https://www.google.com/maps/dir/22.6891486,75.867182/davv+takshila+campus/@22.6898923,75.8673051,18z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3962fcef50d20ba3:0x592abbfe7172123e!2m2!1d75.8704159!2d22.6892814?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D">How to Reach</a><br>
+                            <a href="https://www.google.com/maps/search/nearby+hotels+in+DAVV+Takshila+campus/@22.6899046,75.8634427,16z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D">Hotels Nearby</a><br>
+                            
+                        </div>
+
+                        <!--Column 5-->
+                        <div class="footer-col" id="contact">
+                            <h3>CONTACT US:</h3>
+                            <a href="#">Phone: 0731-2470330</a><br>
+                            <a href="#">Email: stokekar@ietdavv.edu.in</a><br>
+                            <a href="/academics/academics.html">Faculty</a>
                         </div>
 
                     </div>
@@ -408,5 +415,32 @@
         }
     }
 </script>
+
+<!--Placement script -->
+<script>
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".ts-btn");
+    if (!btn) return;
+
+    e.preventDefault();
+
+    const wrapper = btn.closest(".ts-wrapper");
+
+    // Close if already open
+    if (wrapper.classList.contains("open")) {
+        wrapper.classList.remove("open");
+        return;
+    }
+
+    // Close others
+    document.querySelectorAll(".ts-wrapper").forEach(w => w.classList.remove("open"));
+
+    // Open this one
+    wrapper.classList.add("open");
+});
+</script>
+                           
+
+
 </body>
 </html>

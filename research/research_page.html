@@ -53,43 +53,96 @@
   </section>
 
   <!-- ===== Research Areas ===== -->
-  <section class="research-areas">
-    <h2>Research Areas</h2>
-    <p class="section-subtitle">Exploring diverse domains to create innovative solutions</p>
+  <div class="areas-grid">
 
-    <div class="areas-grid">
-      <div class="area-card">
+  <div class="area-card">
+    <div class="card-inner">
+      <div class="card-front">
         <div class="area-icon">📊</div>
         <h3>Data Science</h3>
         <p>Advanced analytics and data-driven decision making</p>
       </div>
-      <div class="area-card">
+      <div class="card-back">
+        <h3>More About Data Science</h3>
+        <p>Includes big data, visualization, statistical modeling, and generative AI analytics.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="card-inner">
+      <div class="card-front">
         <div class="area-icon">🤖</div>
         <h3>Machine Learning</h3>
         <p>Intelligent systems and predictive modeling</p>
       </div>
-      <div class="area-card">
+      <div class="card-back">
+        <h3>More About ML</h3>
+        <p>Deep learning, neural networks, reinforcement learning & optimization.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="card-inner">
+      <div class="card-front">
         <div class="area-icon">🎯</div>
         <h3>Decision Sciences</h3>
         <p>Optimization and strategic planning</p>
       </div>
-      <div class="area-card">
-        <div class="area-icon">🌱</div>
-        <h3>Environmental Management</h3>
-        <p>Sustainable development and climate modeling</p>
-      </div>
-      <div class="area-card">
-        <div class="area-icon">📈</div>
-        <h3>Modelling & Simulation</h3>
-        <p>System dynamics and forecasting</p>
-      </div>
-      <div class="area-card">
-        <div class="area-icon">⚙️</div>
-        <h3>Technology Management</h3>
-        <p>Innovation and technology assessment</p>
+      <div class="card-back">
+        <h3>More About Decision Sciences</h3>
+        <p>blends mathematics, statistics, and computational techniques to support smarter decision.</p>
       </div>
     </div>
-  </section>
+  </div>
+
+  <div class="area-card">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="area-icon">🌱</div>
+        <h3>Environmental</h3>
+        <p>Sustainable development and climate modeling</p>
+      </div>
+      <div class="card-back">
+        <h3>More About Enviromental Sciences</h3>
+        <p>understanding the interaction between human systems and natural ecosystems.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="area-icon">📈</div>
+        <h3>Modelling </h3>
+        <p>System dynamics and forecasting</p>
+      </div>
+      <div class="card-back">
+        <h3>More About Modelling</h3>
+        <p>involves creating mathematical and computational models to represent real-world systems.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="area-card">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="area-icon">⚙️</div>
+        <h3>Technology</h3>
+        <p>Innovation and technology assessment</p>
+      </div>
+      <div class="card-back">
+        <h3>More About Technology Assesment</h3>
+        <p>evaluates the impacts, risks, and future potential of emerging technologies. </p>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
 
   <!-- ===== Tab Navigation ===== -->
   <section class="research-tabs">
@@ -103,21 +156,30 @@
   </section>
 
   <!-- ===== Ph.D. Awarded Section ===== -->
-  <section id="phd-section" class="content-section active">
-    <div class="section-header">
-      <h2>Ph.D.s Awarded</h2>
-      <p>47 doctoral degrees awarded since 1998</p>
-    </div>
+<section id="phd-section" class="content-section active">
+  <div class="section-header">
+    <h2>Ph.D.s Awarded</h2>
+    <p>47 doctoral degrees awarded since 1998</p>
+  </div>
 
-    <div class="search-container">
-      <input type="text" id="phd-search" placeholder="🔍 Search by name, supervisor, or title..."
-        onkeyup="filterPhDs()">
-    </div>
 
-    <div class="phd-grid" id="phd-list">
-      <!-- Ph.D. cards will be populated by JavaScript -->
-    </div>
-  </section>
+  <div class="table-container">
+    <table class="phd-table" id="phd-table">
+      <thead>
+        <tr>
+          <th>S.No.</th>
+          <th>Name</th>
+          <th>Year</th>
+          <th>Supervisor(s)</th>
+          <th>Thesis Title</th>
+        </tr>
+      </thead>
+      <tbody id="phd-tbody">
+        <!-- Table rows will be populated by JavaScript -->
+      </tbody>
+    </table>
+  </div>
+</section>
 
   <!-- ===== Supervisors Section ===== -->
   <section id="supervisors-section" class="content-section">
@@ -138,17 +200,7 @@
       <p>Contributing to global knowledge through quality research</p>
     </div>
 
-    <div class="filter-container">
-      <button class="filter-btn active" onclick="filterPublications('all')">All</button>
-      <button class="filter-btn" onclick="filterPublications('journals')">Journals</button>
-      <button class="filter-btn" onclick="filterPublications('conferences')">Conferences</button>
-      <button class="filter-btn" onclick="filterPublications('books')">Book Chapters</button>
-    </div>
-
-    <div class="search-container">
-      <input type="text" id="pub-search" placeholder="🔍 Search publications..." onkeyup="filterPubs()">
-    </div>
-
+    
     <div class="publications-list" id="publications-list">
       <!-- Publications will be populated by JavaScript -->
     </div>
@@ -166,90 +218,46 @@
     </div>
   </section>
 
-  <!-- Academic Project Section-->
-   <section id="academic-projects-section" class="content-section">
-    <div class="section-header">
-      <h2>Academic Project's</h2>
-      <p>Here are the academic projects </p>
+ <!-- Academic Project Section -->
+<section id="academic-projects-section" class="content-section">
+  <div class="section-header">
+    <h2>Academic Projects</h2>
+    <p>Here are the academic projects</p>
 
-          <div class="projects-contents">
-            <!--Project 1-->
-            <div class="project-dropdown">
-              <button class="dropdown-btn">
-                <span class="project-number"></span>
-                <span class="project-title">Masters Programme in Science and Technology Communication</span>
-                <span class="dropdown-arrow">▼</span>
-              </button>
-              <div class="dropdown-content">
-                <div class="project-details">
-                  <div class="detail-row">
-                    <strong>Co-ordinator:</strong> Dr. V.B.Gupta
-                  </div>
-                  <div class="detail-row">
-                    <strong>Funding Agency:</strong> NCSTC, DST, New Delhi
-                  </div>
-                  <div class="detail-row">
-                    <strong>Amount Sanctioned:</strong> Rs. 18,12,000/-
-                  </div>
-                  <div class="detail-row">
-                    <strong>Duration:</strong> Eight Years
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="projects-contents">
 
-            <!--Project 2-->
-            <div class="project-dropdown">
-                <button class="dropdown-btn">
-                  <span class="project-number"></span>
-                  <span class="project-title">Masters Programme in Science Communication</span>
-                  <span class="dropdown-arrow">▼</span>
-                </button>
-                <div class="dropdown-content">
-                  <div class="project-details">
-                    <div class="detail-row">
-                      <strong>Co-ordinator:</strong> Dr. V.B.Gupta
-                    </div>
-                    <div class="detail-row">
-                      <strong>Funding Agency:</strong> NCSTC, DST, New Delhi
-                    </div>
-                    <div class="detail-row">
-                      <strong>Amount Sanctioned:</strong> Rs. 25,20,000/-
-                    </div>
-                    <div class="detail-row">
-                      <strong>Duration:</strong> Five Years
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div class="soft-projects">
 
-            <!--Project 3-->
-            <div class="project-dropdown">
-                  <button class="dropdown-btn">
-                    <span class="project-number"></span>
-                    <span class="project-title">P.G.Diploma in Science Journalism through Distance Education</span>
-                    <span class="dropdown-arrow">▼</span>
-                  </button>
-                  <div class="dropdown-content">
-                    <div class="project-details">
-                      <div class="detail-row">
-                        <strong>Co-ordinator:</strong> Dr. V.B.Gupta
-                      </div>
-                      <div class="detail-row">
-                        <strong>Funding Agency:</strong> NCSTC, DST, New Delhi
-                      </div>
-                      <div class="detail-row">
-                        <strong>Amount Sanctioned:</strong> Rs. 20,00,000/-
-                      </div>
-                      <div class="detail-row">
-                        <strong>Duration:</strong> Five Years
-                      </div>
-                    </div>
-                  </div>
-            </div>
-    </div>
-   </section>
+  <div class="soft-project-card">
+    <h3>1. Masters Programme in Science and Technology Communication</h3>
+    <p><strong>Co-ordinator:</strong> Dr. V.B. Gupta</p>
+    <p><strong>Funding Agency:</strong> NCSTC, DST, New Delhi</p>
+    <p><strong>Amount Sanctioned:</strong> Rs. 18,12,000/-</p>
+    <p><strong>Duration:</strong> Eight Years</p>
+  </div>
+
+  <div class="soft-project-card">
+    <h3>2. Masters Programme in Science Communication</h3>
+    <p><strong>Co-ordinator:</strong> Dr. V.B. Gupta</p>
+    <p><strong>Funding Agency:</strong> NCSTC, DST, New Delhi</p>
+    <p><strong>Amount Sanctioned:</strong> Rs. 25,20,000/-</p>
+    <p><strong>Duration:</strong> Five Years</p>
+  </div>
+
+  <div class="soft-project-card">
+    <h3>3. P.G. Diploma in Science Journalism (Distance Education)</h3>
+    <p><strong>Co-ordinator:</strong> Dr. V.B. Gupta</p>
+    <p><strong>Funding Agency:</strong> NCSTC, DST, New Delhi</p>
+    <p><strong>Amount Sanctioned:</strong> Rs. 20,00,000/-</p>
+    <p><strong>Duration:</strong> Five Years</p>
+  </div>
+
+</div>
+
+</div>
+
+  </div>
+</section>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
@@ -257,6 +265,24 @@
   </footer>
 
   <script src="research_page.js"></script>
+
+  <!--Script fot the Palcement so that it opens here -->
+                <script>
+                document.addEventListener("click", (e) => {
+                    const btn = e.target.closest(".ts-btn");
+                    if (!btn) return;
+
+                    e.preventDefault();
+
+                    const wrapper = btn.closest(".ts-wrapper");
+                    wrapper.classList.toggle("open");
+
+                    // close other dropdowns
+                    document.querySelectorAll(".ts-wrapper").forEach(w => {
+                        if (w !== wrapper) w.classList.remove("open");
+                    });
+                });
+                </script>
 
 </body>
 

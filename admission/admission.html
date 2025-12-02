@@ -53,20 +53,22 @@
         <div class="program-type">
             <h3>CUET Programs</h3>
             <div class="program-grid">
-                <div class="program-card reveal">
-                    <img src="https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="MBA (Business Analytics) CUET PG">
+                <a href="mba.html" class="program-card reveal" style="text-decoration: none; color: inherit;">
+                    <img src="https://images.unsplash.com/photo-1608222351212-18fe0ec7b13b?q=80&w=1074&auto=format&fit=crop" />
+    
                     <div class="program-card-content">
-                        <h4>MBA (Business Analytics)</h4>
-                        <p>CUET PG 2 Yrs</p>
-                    </div>
-                </div>
+                         <h4>MBA (Business Analytics)</h4>
+                             <p>CUET PG 2 Yrs</p>
+                     </div>
+                </a>
+
                 <a href="aids.html" class="program-card reveal" style="text-decoration: none;">
-    <img src="https://plus.unsplash.com/premium_photo-1682124710157-d1573373a4f5?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="M. Tech (Dual Degree) Artificial Intelligence & Data Science CUET UG">
-    <div class="program-card-content">
-        <h4>M. Tech (Dual Degree) Artificial Intelligence & Data Science</h4>
-        <p>CUET UG 5 Yrs</p>
-    </div>
-</a>
+                    <img src="https://plus.unsplash.com/premium_photo-1682124710157-d1573373a4f5?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="M. Tech (Dual Degree) Artificial Intelligence & Data Science CUET UG">
+                    <div class="program-card-content">
+                        <h4>M. Tech (Dual Degree) Artificial Intelligence & Data Science</h4>
+                        <p>CUET UG 5 Yrs</p>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -178,5 +180,23 @@
     </footer>
 
     <script src="admission.js"></script>
+
+    <!--Script fot the Palcement so that it opens here -->
+                <script>
+                document.addEventListener("click", (e) => {
+                    const btn = e.target.closest(".ts-btn");
+                    if (!btn) return;
+
+                    e.preventDefault();
+
+                    const wrapper = btn.closest(".ts-wrapper");
+                    wrapper.classList.toggle("open");
+
+                    // close other dropdowns
+                    document.querySelectorAll(".ts-wrapper").forEach(w => {
+                        if (w !== wrapper) w.classList.remove("open");
+                    });
+                });
+                </script>
 </body>
 </html>

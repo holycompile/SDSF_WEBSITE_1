@@ -125,6 +125,7 @@
                             </div>
                             <h4 class="contributor-name">Joyobrata Das</h4>
                             <div class="links">
+                                <a href="https://www.linkedin.com/in/joyobrata-das-53467b39b/" target="_blank" class="link-linkedin">LinkedIn</a> |
                                 <a href="https://github.com/holycompile" target="_blank" class="link-github">GitHub</a>
                             </div>
                         </div>
@@ -136,6 +137,7 @@
                         <div class="contributor-name other-tier">Akshita Mishra</div>
                         <div class="contributor-name other-tier">Harshita Basantani</div>
                         <div class="contributor-name other-tier">Rohit Chaudhary</div>
+                        <div class="contributor-name other-tier">Yash Sanchar</div>
                         <div class="contributor-name other-tier">Subhi Tukaria</div>
                         <div class="contributor-name other-tier">Akshara Yadav</div>
                         <div class="contributor-name other-tier">Akriti Tiwari</div>
@@ -148,5 +150,23 @@
         </script>
 
     </main>
+    <!--Script fot the Palcement so that it opens here -->
+                <script>
+                document.addEventListener("click", (e) => {
+                    const btn = e.target.closest(".ts-btn");
+                    if (!btn) return;
+
+                    e.preventDefault();
+
+                    const wrapper = btn.closest(".ts-wrapper");
+                    wrapper.classList.toggle("open");
+
+                    // close other dropdowns
+                    document.querySelectorAll(".ts-wrapper").forEach(w => {
+                        if (w !== wrapper) w.classList.remove("open");
+                    });
+                });
+                </script>
+
 </body>
 </html>

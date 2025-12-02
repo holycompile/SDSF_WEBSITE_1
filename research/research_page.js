@@ -1,7 +1,7 @@
 // ===== Data Arrays =====
 
 // Ph.D. Data
-const phdData = [
+const phdData = [ /* YOUR FULL phdData ARRAY UNCHANGED */ 
     {
         name: "Alka Parashar",
         year: 1998,
@@ -284,18 +284,18 @@ const phdData = [
         supervisor: "Dr. Gyan Prakash",
         title: "Determinants of Purchase of Vegetable Oil Samrat: Linear Probability Model"
     }
+
 ];
 
 // Supervisors Data
-const supervisorsData = [
+const supervisorsData = [ /* unchanged */ 
     {
         name: "Dr. V.B. Gupta",
         title: "Professor, School of Data Science and Forecasting, DAVV, Indore",
         phone: "+91 99933 50547",
         email: "guptavb@hotmail.com",
         specialization: "Systems Engineering, Modelling and Simulation, Technology Management, Environmental Management, Science Communication"
-    },
-    {
+    },{
         name: "Dr. Gyan Prakash",
         title: "Professor, School of Economics, DAVV, Indore",
         phone: "+91 94254 80908",
@@ -344,10 +344,11 @@ const supervisorsData = [
         email: "mayank.saxena71@gmail.com",
         specialization: "Strategic Management, Marketing"
     }
+
 ];
 
-// Publications Data (sample - you can add more)
-const publicationsData = [
+// Publications Data
+const publicationsData = [ /* unchanged */ 
     {
         title: "Optimizing Analytics of Artificial Intelligence and Data Science",
         authors: "Mahesh Patidar, V. B.Gupta, Seema Patidar",
@@ -390,10 +391,11 @@ const publicationsData = [
         year: 2016,
         type: "conferences"
     }
+
 ];
 
 // Projects Data
-const projectsData = [
+const projectsData = [ /* unchanged */ 
     {
         title: "Integrated Rural Energy Planning - Development of a Mathematical Model",
         pi: "Dr. V.B.Gupta",
@@ -450,27 +452,28 @@ const projectsData = [
         amount: "29,98,970",
         duration: "3½ Years (2008-12)"
     }
+
 ];
+
+
 
 // ===== Populate Functions =====
 
-// Populate Ph.D. Cards
-function populatePhDs() {
-    const phdList = document.getElementById('phd-list');
-    phdList.innerHTML = '';
-
-    phdData.forEach(phd => {
-        const card = document.createElement('div');
-        card.className = 'phd-card';
-        card.innerHTML = `
-      <div class="phd-name">${phd.name}</div>
-      <div class="phd-title">${phd.title}</div>
-      <div class="phd-meta">
-        <span>📅 ${phd.year}</span>
-        <span>👨‍🏫 ${phd.supervisor}</span>
-      </div>
-    `;
-        phdList.appendChild(card);
+// Function to populate the Ph.D. table
+function populatePhdTable() {
+    const tbody = document.getElementById('phd-tbody');
+    tbody.innerHTML = '';
+    
+    phdData.forEach((phd, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${phd.name}</td>
+            <td>${phd.year}</td>
+            <td>${phd.supervisor}</td>
+            <td>${phd.title}</td>
+        `;
+        tbody.appendChild(row);
     });
 }
 
@@ -558,48 +561,53 @@ function populateProjects() {
     });
 }
 
+
+
 // ===== Tab Navigation =====
 function openTab(sectionId) {
-    // Hide all content sections
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => section.classList.remove('active'));
 
-    // Remove active class from all tabs
     const tabs = document.querySelectorAll('.tab-btn');
     tabs.forEach(tab => tab.classList.remove('active'));
 
-    // Show selected section
     document.getElementById(sectionId).classList.add('active');
-
-    // Add active class to clicked tab
     event.target.classList.add('active');
 
-    // Scroll to section
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-// ===== Filter Functions =====
-function filterPhDs() {
-    const searchTerm = document.getElementById('phd-search').value.toLowerCase();
-    const cards = document.querySelectorAll('.phd-card');
 
-    cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (text.includes(searchTerm)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
+
+// ===== Filter Functions =====
+
+function filterPhDs() {
+    const searchValue = document.getElementById('phd-search').value.toLowerCase();
+    const rows = document.getElementById('phd-table').getElementsByTagName('tr');
+
+    for (let i = 1; i < rows.length; i++) {
+        const row = rows[i];
+        const cells = row.getElementsByTagName('td');
+        let found = false;
+
+        for (let j = 1; j < cells.length; j++) {
+            if (j === 2) continue;
+
+            const cellText = cells[j].textContent.toLowerCase();
+            if (cellText.includes(searchValue)) {
+                found = true;
+                break;
+            }
         }
-    });
+        row.style.display = found ? '' : 'none';
+    }
 }
 
 function filterPublications(type) {
-    // Update active filter button
     const filterBtns = document.querySelectorAll('.filter-btn');
     filterBtns.forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
 
-    // Repopulate with filtered data
     populatePublications(type);
 }
 
@@ -608,43 +616,29 @@ function filterPubs() {
     const cards = document.querySelectorAll('.publication-card');
 
     cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        if (text.includes(searchTerm)) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
-        }
+        card.style.display = card.textContent.toLowerCase().includes(searchTerm)
+            ? 'block'
+            : 'none';
     });
 }
 
+
+
 // ===== Scroll to Section =====
 function scrollToSection(sectionId) {
-    // Open the corresponding tab
-    const tabMap = {
-        'supervisors-section': 'supervisors-section',
-        'phd-section': 'phd-section',
-        'publications-section': 'publications-section',
-        'projects-section': 'projects-section'
-    };
-
-    // Hide all sections
     const sections = document.querySelectorAll('.content-section');
     sections.forEach(section => section.classList.remove('active'));
 
-    // Remove active from all tabs
     const tabs = document.querySelectorAll('.tab-btn');
     tabs.forEach(tab => tab.classList.remove('active'));
 
-    // Show the target section
     document.getElementById(sectionId).classList.add('active');
 
-    // Activate corresponding tab
     const targetTab = Array.from(tabs).find(tab =>
         tab.getAttribute('onclick').includes(sectionId)
     );
     if (targetTab) targetTab.classList.add('active');
 
-    // Smooth scroll to section
     setTimeout(() => {
         document.getElementById(sectionId).scrollIntoView({
             behavior: 'smooth',
@@ -653,37 +647,49 @@ function scrollToSection(sectionId) {
     }, 100);
 }
 
-// ===== Initialize on Page Load =====
+
+
+// =========================================
+// ⭐ ADD THIS → New Dropdown Initialization
+// =========================================
+function initProjectsDropdown() {
+    const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+    const numbers = document.querySelectorAll('.project-number');
+
+    // Auto numbering
+    numbers.forEach((num, i) => {
+        num.textContent = (i + 1) + ".";
+    });
+
+    dropdownBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.classList.toggle('active');
+            const content = btn.nextElementSibling;
+            content.classList.toggle('show');
+
+            dropdownBtns.forEach(otherBtn => {
+                if (otherBtn !== btn) {
+                    otherBtn.classList.remove('active');
+                    otherBtn.nextElementSibling.classList.remove('show');
+                }
+            });
+        });
+    });
+}
+
+
+
+// =========================================
+// ⭐ SINGLE CLEAN DOMContentLoaded
+// =========================================
 document.addEventListener('DOMContentLoaded', function () {
-    populatePhDs();
+    populatePhdTable();
     populateSupervisors();
     populatePublications();
     populateProjects();
 
-    console.log('Research page initialized successfully!');
-    console.log(`Loaded: ${phdData.length} Ph.D.s, ${supervisorsData.length} Supervisors, ${publicationsData.length} Publications, ${projectsData.length} Projects`);
-});
+    // Initialize dropdowns
+    initProjectsDropdown();
 
-// this is the java script code for the Academic Projects Section part
-document.addEventListener('DOMContentLoaded', function() {
-  const dropdownBtns = document.querySelectorAll('.dropdown-btn');
-  
-  dropdownBtns.forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Toggle active class
-      this.classList.toggle('active');
-      
-      // Toggle dropdown content
-      const content = this.nextElementSibling;
-      content.classList.toggle('show');
-      
-      
-       dropdownBtns.forEach(otherBtn => {
-        if (otherBtn !== this) {
-          otherBtn.classList.remove('active');
-          otherBtn.nextElementSibling.classList.remove('show');
-        }
-      });
-    });
-  });
+    console.log('Research page initialized successfully!');
 });

@@ -1,87 +1,3 @@
-/*Code edited by Alivia Hossain, SDSF AI/DS, Sem 1*/
-/* ===== GENERAL ===== */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-} */
-
-/* ===== Navbar ===== 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
-    background: #ffffff;
-    border-bottom: 3px solid #4a68ff;
-    transition: box-shadow 0.3s ease;
-}
-
-.navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.navbar-right{
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.dept-logo {
-    height: 60px;
-    width: 60px;
-    background-color: #ddd;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-left: 10px;
-}
-
-.university-logo {
-    height: 80px;
-    width: 80px;
-    background-color: #ddd;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-right: 10px;
-}
-
-.title h1 {
-    font-size: 1.3rem;
-    color: #333;
-}
-
-.title p {
-    font-size: 0.85rem;
-    color: #666;
-}
-
-.nav-links {
-    display: flex;
-    gap: 4rem;
-    margin-left: 4rem;
-    margin-right: auto;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #ff0000;
-}
-
-.search-bar {
-    padding: 0.5rem 0.8rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-} */
-
 
 /* ===== HERO SECTION ===== */
 .academics-hero-box {
@@ -859,4 +775,24 @@ body {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+
+/*faculty-images*/
+.faculty-photo {
+  width: 200px;        /* adjust as needed */
+  height: 200px;       /* adjust as needed */
+  background: linear-gradient(135deg, #3b5bff, #4e7dfc);
+  border-radius: 20px;
+  overflow: hidden;     /* IMPORTANT: prevents overflow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faculty-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* MAJOR FIX: keeps proportions */
+  border-radius: 20px;
 }
