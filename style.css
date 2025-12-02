@@ -37,7 +37,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: -1rem 0rem;
+    padding: -0.9rem 0rem;
     background: #ffffff;
     border-bottom: 3px solid #4a68ff;
     transition: box-shadow 0.3s ease;
@@ -64,7 +64,7 @@ body {
     background-color: #ddd;
     border-radius: 10px;
     object-fit: cover;
-    margin-left: 20px; 
+    margin-left: 7px; 
     margin-right: 10px;
     margin-top:-25px;
 }
@@ -76,7 +76,7 @@ body {
     background-color: #ddd;
     border-radius: 10px;
     object-fit: cover;
-    margin-left: 3rem; 
+    margin-left: 0.6rem; 
     margin-right: 10px;
     margin-top: -30px;
     margin-bottom:13px;
@@ -95,7 +95,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 5rem;
+    gap: 4.5rem;
     margin-left: -5rem; 	
     margin-right: auto;
     margin-top: 2rem;
